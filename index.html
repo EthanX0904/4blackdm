@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 BLACK DM — Global Trade & Sourcing</title>
+    <meta name="description" content="4 BLACK DM PTY LTD - Australian import and export trading company specialising in international procurement, supply chain management and cross-border trade services.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #fff; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== HEADER ===== */
+        header { background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%); color: #fff; padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+        .logo span { color: #e94560; }
+        .logo small { display: block; font-size: 11px; font-weight: 400; opacity: .7; letter-spacing: 2px; }
+        nav a { color: rgba(255,255,255,.8); text-decoration: none; margin-left: 28px; font-size: 14px; font-weight: 500; transition: .3s; }
+        nav a:hover { color: #e94560; }
+
+        /* ===== HERO ===== */
+        .hero { background: linear-gradient(135deg, #0f0f1a 0%, #16213e 50%, #1a1a2e 100%); color: #fff; padding: 100px 0 80px; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(233,69,96,.08) 0%, transparent 70%); }
+        .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+        .hero h1 span { color: #e94560; }
+        .hero p { font-size: 18px; opacity: .85; margin-bottom: 30px; max-width: 500px; }
+        .hero-stats { display: flex; gap: 40px; margin-top: 40px; }
+        .hero-stats div { text-align: center; }
+        .hero-stats strong { display: block; font-size: 32px; color: #e94560; }
+        .hero-stats span { font-size: 13px; opacity: .7; }
+
+        .hero-right { position: relative; }
+        .hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .hero-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 24px; backdrop-filter: blur(10px); }
+        .hero-card .icon { font-size: 32px; margin-bottom: 8px; }
+        .hero-card h3 { font-size: 15px; margin-bottom: 4px; }
+        .hero-card p { font-size: 12px; opacity: .7; }
+
+        .btn { display: inline-block; padding: 14px 36px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; cursor: pointer; border: none; transition: .3s; }
+        .btn-primary { background: #e94560; color: #fff; }
+        .btn-primary:hover { background: #d63850; transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.3); }
+        .btn-outline:hover { border-color: #e94560; }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+        .section-title p { color: #666; max-width: 600px; margin: 0 auto; }
+        .section-title .bar { width: 60px; height: 4px; background: #e94560; margin: 16px auto 0; border-radius: 2px; }
+
+        /* ===== ABOUT ===== */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+        .about-card { background: #f8f9fa; border-radius: 16px; padding: 36px 28px; text-align: center; transition: .3s; }
+        .about-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+        .about-card .icon { font-size: 40px; margin-bottom: 16px; }
+        .about-card h3 { font-size: 18px; margin-bottom: 8px; }
+        .about-card p { font-size: 14px; color: #666; }
+
+        /* ===== SERVICES ===== */
+        .services { background: #f8f9fa; }
+        .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .service-item { background: #fff; border-radius: 16px; padding: 36px; display: flex; gap: 24px; box-shadow: 0 2px 16px rgba(0,0,0,.04); transition: .3s; }
+        .service-item:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); }
+        .service-icon { font-size: 36px; flex-shrink: 0; }
+        .service-item h3 { font-size: 18px; margin-bottom: 6px; }
+        .service-item p { font-size: 14px; color: #666; }
+
+        /* ===== CONTACT ===== */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-info h3 { font-size: 22px; margin-bottom: 16px; }
+        .contact-info p { color: #666; margin-bottom: 24px; }
+        .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .contact-detail .icon { font-size: 20px; width: 40px; text-align: center; }
+        .contact-detail strong { display: block; font-size: 14px; }
+        .contact-detail span { font-size: 14px; color: #666; }
+
+        .contact-form input, .contact-form textarea { width: 100%; padding: 14px 18px; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 14px; margin-bottom: 16px; font-family: inherit; transition: .3s; }
+        .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #e94560; box-shadow: 0 0 0 3px rgba(233,69,96,.1); }
+        .contact-form textarea { height: 140px; resize: vertical; }
+
+        /* ===== FOOTER ===== */
+        footer { background: #0f0f1a; color: rgba(255,255,255,.6); padding: 40px 0; text-align: center; font-size: 14px; }
+        footer strong { color: #fff; }
+        footer .logo { margin-bottom: 12px; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 32px; }
+            .hero-stats { justify-content: center; }
+            .hero-right { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            nav a { margin-left: 16px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="container">
+        <div class="logo">4 BLACK DM <small>GLOBAL TRADE & SOURCING</small></div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="container">
+        <div>
+            <h1>Connecting Global Markets<br><span>Australian Import &amp; Export</span></h1>
+            <p>4 BLACK DM PTY LTD is based in Sydney, Australia, specialising in cross-border trade, international procurement and supply chain management — delivering efficient, reliable end-to-end trading solutions.</p>
+            <a href="#contact" class="btn btn-primary">Get a Quote</a>
+            <a href="#services" class="btn btn-outline" style="margin-left:12px;">Learn More</a>
+            <div class="hero-stats">
+                <div><strong>10+</strong><span>Partner Countries</span></div>
+                <div><strong>50+</strong><span>Clients Served</span></div>
+                <div><strong>99%</strong><span>On-Time Delivery</span></div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-cards">
+                <div class="hero-card"><div class="icon">🌏</div><h3>Global Sourcing</h3><p>Asia &middot; Europe &middot; Americas</p></div>
+                <div class="hero-card"><div class="icon">📦</div><h3>Logistics &amp; Customs</h3><p>Sea &middot; Air &middot; Land</p></div>
+                <div class="hero-card"><div class="icon">📋</div><h3>Quality Control</h3><p>Inspection &middot; Certification &middot; Traceability</p></div>
+                <div class="hero-card"><div class="icon">🤝</div><h3>Procurement Agent</h3><p>Tailored Sourcing Solutions</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About 4 BLACK DM</h2>
+            <div class="bar"></div>
+            <p>A Sydney-based international trading company committed to bridging business between Australia and the world.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="icon">🎯</div>
+                <h3>Import &amp; Export Focus</h3>
+                <p>Specialising in merchandise trade between Australia and the Asia-Pacific region, covering commodities, consumer goods and industrial products across multiple sectors.</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">🔗</div>
+                <h3>Supply Chain Integration</h3>
+                <p>End-to-end tracking from source procurement to final delivery, reducing intermediary costs and improving supply chain efficiency.</p>
+            </div>
+            <div class="about-card">
+                <div class="icon">✅</div>
+                <h3>Compliance &amp; Assurance</h3>
+                <p>Thorough knowledge of Australian import/export regulations, customs duties and Incoterms to ensure every transaction is compliant and secure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <div class="bar"></div>
+            <p>Full-spectrum professional services covering the entire import/export trade chain.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">📦</div>
+                <div>
+                    <h3>International Sourcing</h3>
+                    <p>Supplier identification, price negotiation, sample validation and order tracking — all managed end-to-end according to your requirements.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🚢</div>
+                <div>
+                    <h3>Logistics &amp; Customs Clearance</h3>
+                    <p>Sea freight, air freight and courier services. Australian customs clearance, GST refunds and cargo insurance.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🔍</div>
+                <div>
+                    <h3>Quality Inspection</h3>
+                    <p>Third-party inspection services, container loading supervision, product quality traceability and international certification support.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">📊</div>
+                <div>
+                    <h3>Market Access Advisory</h3>
+                    <p>Australian product compliance consulting, labelling requirements, customs tariff classification and import permit facilitation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <div class="bar"></div>
+            <p>Have import or export requirements? We would love to hear from you.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>4 BLACK DM PTY LTD</h3>
+                <p>Whether you are looking to export from Australia or import from overseas, our team is ready to discuss how we can support your trade goals.</p>
+                <div class="contact-detail">
+                    <div class="icon">📍</div>
+                    <div><strong>Office Address</strong><span>Sydney, NSW 2000, Australia</span></div>
+                </div>
+                <div class="contact-detail">
+                    <div class="icon">📧</div>
+                    <div><strong>Email</strong><span>info@4blackdm.com.au</span></div>
+                </div>
+                <div class="contact-detail">
+                    <div class="icon">📱</div>
+                    <div><strong>Phone</strong><span>+61 2 8000 0000</span></div>
+                </div>
+                <div class="contact-detail">
+                    <div class="icon">🏛️</div>
+                    <div><strong>ABN</strong><span>89 651 130 362</span></div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name *" required>
+                <input type="email" placeholder="Email Address *" required>
+                <input type="text" placeholder="Company Name">
+                <select style="width:100%;padding:14px 18px;border:1px solid #e0e0e0;border-radius:8px;font-size:14px;margin-bottom:16px;font-family:inherit;">
+                    <option>Select Enquiry Type</option>
+                    <option>Product Sourcing</option>
+                    <option>Australian Export Collaboration</option>
+                    <option>Logistics &amp; Customs Enquiry</option>
+                    <option>General Enquiry</option>
+                </select>
+                <textarea placeholder="Please describe your requirements... *" required></textarea>
+                <button type="submit" class="btn btn-primary" style="width:100%">Submit Enquiry</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <div class="logo" style="color:#fff;font-size:20px;">4 BLACK DM <small style="display:block;font-size:10px;opacity:.5;">GLOBAL TRADE & SOURCING</small></div>
+        <p style="margin-bottom:8px;">4 BLACK DM PTY LTD &nbsp;|&nbsp; ABN 89 651 130 362 &nbsp;|&nbsp; Sydney, Australia</p>
+        <p>&copy; 2026 4 BLACK DM PTY LTD. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
