@@ -3,88 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4 BLACK DM — Global Trade & Sourcing</title>
-    <meta name="description" content="4 BLACK DM PTY LTD - Australian import and export trading company specialising in international procurement, supply chain management and cross-border trade services.">
+    <title>4 BLACK DM — Premium Food, Beverage & Wine Trading</title>
+    <meta name="description" content="4 BLACK DM PTY LTD is a Sydney-based premium food, beverage and wine trading company, specialising in Australian wine exports and international gourmet food importation.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #fff; line-height: 1.6; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* ===== HEADER ===== */
-        header { background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%); color: #fff; padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+        header { background: rgba(15,15,26,.95); color: #fff; padding: 16px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.06); }
         header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; font-weight: 800; letter-spacing: 1px; }
-        .logo span { color: #e94560; }
-        .logo small { display: block; font-size: 11px; font-weight: 400; opacity: .7; letter-spacing: 2px; }
-        nav a { color: rgba(255,255,255,.8); text-decoration: none; margin-left: 28px; font-size: 14px; font-weight: 500; transition: .3s; }
-        nav a:hover { color: #e94560; }
+        .logo { font-size: 22px; font-weight: 800; letter-spacing: 1px; color: #fff; text-decoration: none; }
+        .logo span { color: #c8a45c; }
+        .logo small { display: block; font-size: 10px; font-weight: 400; opacity: .6; letter-spacing: 2px; }
+        nav { display: flex; align-items: center; gap: 6px; }
+        nav a { color: rgba(255,255,255,.7); text-decoration: none; padding: 8px 16px; font-size: 13px; font-weight: 500; transition: .3s; border-radius: 6px; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,.06); }
+        nav a.active { color: #c8a45c; background: rgba(200,164,92,.1); }
+
+        /* ===== HAMBURGER ===== */
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .hamburger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: .3s; }
 
         /* ===== HERO ===== */
-        .hero { background: linear-gradient(135deg, #0f0f1a 0%, #16213e 50%, #1a1a2e 100%); color: #fff; padding: 100px 0 80px; position: relative; overflow: hidden; }
-        .hero::after { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(233,69,96,.08) 0%, transparent 70%); }
+        .hero { background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #2d1b2e 100%); color: #fff; padding: 140px 0 80px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -30%; right: -10%; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(200,164,92,.06) 0%, transparent 70%); }
         .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
-        .hero h1 span { color: #e94560; }
-        .hero p { font-size: 18px; opacity: .85; margin-bottom: 30px; max-width: 500px; }
-        .hero-stats { display: flex; gap: 40px; margin-top: 40px; }
+        .hero h1 { font-size: 48px; font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+        .hero h1 span { color: #c8a45c; }
+        .hero p { font-size: 17px; opacity: .85; margin-bottom: 28px; max-width: 500px; }
+        .hero-stats { display: flex; gap: 40px; margin-top: 36px; }
         .hero-stats div { text-align: center; }
-        .hero-stats strong { display: block; font-size: 32px; color: #e94560; }
-        .hero-stats span { font-size: 13px; opacity: .7; }
+        .hero-stats strong { display: block; font-size: 30px; color: #c8a45c; }
+        .hero-stats span { font-size: 12px; opacity: .6; }
 
-        .hero-right { position: relative; }
-        .hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .hero-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 24px; backdrop-filter: blur(10px); }
-        .hero-card .icon { font-size: 32px; margin-bottom: 8px; }
-        .hero-card h3 { font-size: 15px; margin-bottom: 4px; }
-        .hero-card p { font-size: 12px; opacity: .7; }
+        .hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .hero-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 22px; }
+        .hero-card .icon { font-size: 28px; margin-bottom: 6px; }
+        .hero-card h3 { font-size: 14px; margin-bottom: 3px; }
+        .hero-card p { font-size: 11px; opacity: .6; }
 
-        .btn { display: inline-block; padding: 14px 36px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; cursor: pointer; border: none; transition: .3s; }
-        .btn-primary { background: #e94560; color: #fff; }
-        .btn-primary:hover { background: #d63850; transform: translateY(-2px); }
-        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.3); }
-        .btn-outline:hover { border-color: #e94560; }
+        .btn { display: inline-block; padding: 14px 36px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; cursor: pointer; border: none; transition: .3s; }
+        .btn-primary { background: #c8a45c; color: #0f0f1a; }
+        .btn-primary:hover { background: #d4b06a; transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.25); }
+        .btn-outline:hover { border-color: #c8a45c; color: #c8a45c; }
 
         /* ===== SECTIONS ===== */
         section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
-        .section-title p { color: #666; max-width: 600px; margin: 0 auto; }
-        .section-title .bar { width: 60px; height: 4px; background: #e94560; margin: 16px auto 0; border-radius: 2px; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 32px; font-weight: 700; margin-bottom: 10px; }
+        .section-title p { color: #666; max-width: 600px; margin: 0 auto; font-size: 15px; }
+        .section-title .bar { width: 50px; height: 3px; background: #c8a45c; margin: 14px auto 0; border-radius: 2px; }
 
         /* ===== ABOUT ===== */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
-        .about-card { background: #f8f9fa; border-radius: 16px; padding: 36px 28px; text-align: center; transition: .3s; }
-        .about-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
-        .about-card .icon { font-size: 40px; margin-bottom: 16px; }
-        .about-card h3 { font-size: 18px; margin-bottom: 8px; }
-        .about-card p { font-size: 14px; color: #666; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text h2 { font-size: 32px; font-weight: 700; margin-bottom: 16px; }
+        .about-text p { color: #555; margin-bottom: 14px; font-size: 15px; }
+        .about-text ul { list-style: none; padding: 0; }
+        .about-text ul li { padding: 8px 0; font-size: 14px; color: #444; }
+        .about-text ul li::before { content: '◆ '; color: #c8a45c; }
+        .about-image { background: #f8f9fa; border-radius: 16px; height: 100%; min-height: 320px; display: flex; align-items: center; justify-content: center; }
+        .about-image .icon-wrap { text-align: center; }
+        .about-image .icon-wrap .big-icon { font-size: 100px; display: block; margin-bottom: 8px; }
+        .about-image .icon-wrap span { color: #999; font-size: 14px; }
 
-        /* ===== SERVICES ===== */
-        .services { background: #f8f9fa; }
-        .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .service-item { background: #fff; border-radius: 16px; padding: 36px; display: flex; gap: 24px; box-shadow: 0 2px 16px rgba(0,0,0,.04); transition: .3s; }
-        .service-item:hover { box-shadow: 0 8px 32px rgba(0,0,0,.08); }
-        .service-icon { font-size: 36px; flex-shrink: 0; }
-        .service-item h3 { font-size: 18px; margin-bottom: 6px; }
-        .service-item p { font-size: 14px; color: #666; }
+        /* ===== PRODUCTS ===== */
+        .products { background: #f8f9fa; }
+        .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .product-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,.04); transition: .3s; }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+        .product-card .product-img { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 64px; }
+        .product-card .product-body { padding: 24px; }
+        .product-card h3 { font-size: 18px; margin-bottom: 8px; }
+        .product-card p { font-size: 13px; color: #666; }
+
+        /* ===== WHY US ===== */
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .why-card { text-align: center; padding: 36px 24px; border-radius: 16px; transition: .3s; }
+        .why-card:hover { background: #f8f9fa; }
+        .why-card .icon { font-size: 44px; margin-bottom: 16px; }
+        .why-card h3 { font-size: 18px; margin-bottom: 8px; }
+        .why-card p { font-size: 14px; color: #666; }
 
         /* ===== CONTACT ===== */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .contact-info h3 { font-size: 22px; margin-bottom: 16px; }
-        .contact-info p { color: #666; margin-bottom: 24px; }
-        .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-        .contact-detail .icon { font-size: 20px; width: 40px; text-align: center; }
-        .contact-detail strong { display: block; font-size: 14px; }
-        .contact-detail span { font-size: 14px; color: #666; }
+        .contact-info p { color: #666; margin-bottom: 24px; font-size: 14px; }
+        .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+        .contact-detail .icon { font-size: 18px; width: 36px; text-align: center; }
+        .contact-detail strong { display: block; font-size: 13px; }
+        .contact-detail span { font-size: 13px; color: #666; }
 
-        .contact-form input, .contact-form textarea { width: 100%; padding: 14px 18px; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 14px; margin-bottom: 16px; font-family: inherit; transition: .3s; }
-        .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #e94560; box-shadow: 0 0 0 3px rgba(233,69,96,.1); }
-        .contact-form textarea { height: 140px; resize: vertical; }
+        .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 14px 18px; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 14px; margin-bottom: 14px; font-family: inherit; transition: .3s; background: #fff; }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { outline: none; border-color: #c8a45c; box-shadow: 0 0 0 3px rgba(200,164,92,.12); }
+        .contact-form textarea { height: 120px; resize: vertical; }
 
         /* ===== FOOTER ===== */
-        footer { background: #0f0f1a; color: rgba(255,255,255,.6); padding: 40px 0; text-align: center; font-size: 14px; }
+        footer { background: #0f0f1a; color: rgba(255,255,255,.5); padding: 40px 0; text-align: center; font-size: 13px; }
         footer strong { color: #fff; }
-        footer .logo { margin-bottom: 12px; }
+        footer .footer-links { margin-bottom: 16px; }
+        footer .footer-links a { color: rgba(255,255,255,.5); text-decoration: none; margin: 0 12px; font-size: 13px; }
+        footer .footer-links a:hover { color: #c8a45c; }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
@@ -93,9 +113,11 @@
             .hero-stats { justify-content: center; }
             .hero-right { display: none; }
             .about-grid { grid-template-columns: 1fr; }
-            .services-grid { grid-template-columns: 1fr; }
+            .products-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
-            nav a { margin-left: 16px; font-size: 12px; }
+            nav { display: none; }
+            .hamburger { display: flex; }
         }
     </style>
 </head>
@@ -104,12 +126,16 @@
 <!-- ===== HEADER ===== -->
 <header>
     <div class="container">
-        <div class="logo">4 BLACK DM <small>GLOBAL TRADE & SOURCING</small></div>
+        <a href="#" class="logo">4 BLACK DM <small>PREMIUM FOOD & BEVERAGE TRADING</small></a>
         <nav>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="#about" class="active">About Us</a>
+            <a href="#products">Our Products</a>
+            <a href="#why-us">Why Us</a>
             <a href="#contact">Contact</a>
         </nav>
+        <button class="hamburger" onclick="document.querySelector('nav').style.display='flex'" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
 
@@ -117,22 +143,22 @@
 <section class="hero">
     <div class="container">
         <div>
-            <h1>Connecting Global Markets<br><span>Australian Import &amp; Export</span></h1>
-            <p>4 BLACK DM PTY LTD is based in Sydney, Australia, specialising in cross-border trade, international procurement and supply chain management — delivering efficient, reliable end-to-end trading solutions.</p>
-            <a href="#contact" class="btn btn-primary">Get a Quote</a>
-            <a href="#services" class="btn btn-outline" style="margin-left:12px;">Learn More</a>
+            <h1>Premium Food, Beverage<br>&amp; <span>Wine Trading</span></h1>
+            <p>4 BLACK DM PTY LTD is a Sydney-based trading company specialising in the export of Australian premium wines and the import of international gourmet food and beverages.</p>
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            <a href="#products" class="btn btn-outline" style="margin-left:12px;">Our Products</a>
             <div class="hero-stats">
-                <div><strong>10+</strong><span>Partner Countries</span></div>
-                <div><strong>50+</strong><span>Clients Served</span></div>
-                <div><strong>99%</strong><span>On-Time Delivery</span></div>
+                <div><strong>80+</strong><span>Winemakers</span></div>
+                <div><strong>15+</strong><span>Export Markets</span></div>
+                <div><strong>20+</strong><span>Years Experience</span></div>
             </div>
         </div>
         <div class="hero-right">
             <div class="hero-cards">
-                <div class="hero-card"><div class="icon">🌏</div><h3>Global Sourcing</h3><p>Asia &middot; Europe &middot; Americas</p></div>
-                <div class="hero-card"><div class="icon">📦</div><h3>Logistics &amp; Customs</h3><p>Sea &middot; Air &middot; Land</p></div>
-                <div class="hero-card"><div class="icon">📋</div><h3>Quality Control</h3><p>Inspection &middot; Certification &middot; Traceability</p></div>
-                <div class="hero-card"><div class="icon">🤝</div><h3>Procurement Agent</h3><p>Tailored Sourcing Solutions</p></div>
+                <div class="hero-card"><div class="icon">🍷</div><h3>Premium Wines</h3><p>Barossa, Margaret River, Hunter Valley</p></div>
+                <div class="hero-card"><div class="icon">🧀</div><h3>Gourmet Foods</h3><p>Cheese, Olive Oil, Honey, Preserves</p></div>
+                <div class="hero-card"><div class="icon">☕</div><h3>Specialty Beverages</h3><p>Coffee, Tea, Craft Spirits</p></div>
+                <div class="hero-card"><div class="icon">📦</div><h3>Wholesale Supply</h3><p>Bulk &amp; Container Shipments</p></div>
             </div>
         </div>
     </div>
@@ -141,87 +167,142 @@
 <!-- ===== ABOUT ===== -->
 <section id="about">
     <div class="container">
-        <div class="section-title">
-            <h2>About 4 BLACK DM</h2>
-            <div class="bar"></div>
-            <p>A Sydney-based international trading company committed to bridging business between Australia and the world.</p>
-        </div>
         <div class="about-grid">
-            <div class="about-card">
-                <div class="icon">🎯</div>
-                <h3>Import &amp; Export Focus</h3>
-                <p>Specialising in merchandise trade between Australia and the Asia-Pacific region, covering commodities, consumer goods and industrial products across multiple sectors.</p>
+            <div class="about-text">
+                <h2>About 4 BLACK DM</h2>
+                <div class="bar" style="width:50px;height:3px;background:#c8a45c;margin:0 0 20px;border-radius:2px;"></div>
+                <p>Founded in Sydney, 4 BLACK DM PTY LTD connects Australia's world-class food and wine producers with global markets. We specialise in the export of premium Australian wines and the import of fine food and beverages from around the world.</p>
+                <p>Our team brings decades of combined experience in international trade, logistics and supply chain management, ensuring every shipment meets the highest standards of quality and compliance.</p>
+                <ul>
+                    <li>Direct relationships with 80+ Australian winemakers</li>
+                    <li>End-to-end logistics: sourcing, shipping, customs clearance</li>
+                    <li>Strict quality control and cold chain management</li>
+                    <li>Exporting to 15+ countries across Asia, Europe and North America</li>
+                </ul>
             </div>
-            <div class="about-card">
-                <div class="icon">🔗</div>
-                <h3>Supply Chain Integration</h3>
-                <p>End-to-end tracking from source procurement to final delivery, reducing intermediary costs and improving supply chain efficiency.</p>
-            </div>
-            <div class="about-card">
-                <div class="icon">✅</div>
-                <h3>Compliance &amp; Assurance</h3>
-                <p>Thorough knowledge of Australian import/export regulations, customs duties and Incoterms to ensure every transaction is compliant and secure.</p>
+            <div class="about-image">
+                <div class="icon-wrap">
+                    <div class="big-icon">🍷</div>
+                    <span>Australian Wine Specialists</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section id="services" class="services">
+<!-- ===== PRODUCTS ===== -->
+<section id="products" class="products">
     <div class="container">
         <div class="section-title">
-            <h2>Our Services</h2>
+            <h2>Our Product Range</h2>
             <div class="bar"></div>
-            <p>Full-spectrum professional services covering the entire import/export trade chain.</p>
+            <p>Curated selection of premium Australian and international food and beverage products.</p>
         </div>
-        <div class="services-grid">
-            <div class="service-item">
-                <div class="service-icon">📦</div>
-                <div>
-                    <h3>International Sourcing</h3>
-                    <p>Supplier identification, price negotiation, sample validation and order tracking — all managed end-to-end according to your requirements.</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img" style="background:linear-gradient(135deg,#fdf6ec,#f5e6d0);">🍷</div>
+                <div class="product-body">
+                    <h3>Australian Wine</h3>
+                    <p>Premium wines from Barossa Valley, Margaret River, Hunter Valley, Clare Valley and Coonawarra — including Shiraz, Cabernet Sauvignon, Chardonnay and Pinot Noir.</p>
                 </div>
             </div>
-            <div class="service-item">
-                <div class="service-icon">🚢</div>
-                <div>
-                    <h3>Logistics &amp; Customs Clearance</h3>
-                    <p>Sea freight, air freight and courier services. Australian customs clearance, GST refunds and cargo insurance.</p>
+            <div class="product-card">
+                <div class="product-img" style="background:linear-gradient(135deg,#f0f7f0,#dce8dc);">🧀</div>
+                <div class="product-body">
+                    <h3>Gourmet &amp; Artisan Foods</h3>
+                    <p>Australian extra virgin olive oil, aged cheeses, Manuka honey, artisan preserves, premium nuts and dried fruits sourced directly from regional producers.</p>
                 </div>
             </div>
-            <div class="service-item">
-                <div class="service-icon">🔍</div>
-                <div>
-                    <h3>Quality Inspection</h3>
-                    <p>Third-party inspection services, container loading supervision, product quality traceability and international certification support.</p>
+            <div class="product-card">
+                <div class="product-img" style="background:linear-gradient(135deg,#f5f0eb,#e8ddd0);">☕</div>
+                <div class="product-body">
+                    <h3>Specialty Beverages</h3>
+                    <p>Single-origin coffees, premium loose-leaf teas, craft spirits and non-alcoholic beverages, carefully selected for discerning international markets.</p>
                 </div>
             </div>
-            <div class="service-item">
-                <div class="service-icon">📊</div>
-                <div>
-                    <h3>Market Access Advisory</h3>
-                    <p>Australian product compliance consulting, labelling requirements, customs tariff classification and import permit facilitation.</p>
+            <div class="product-card">
+                <div class="product-img" style="background:linear-gradient(135deg,#fcf4f4,#f0e0e0);">🥩</div>
+                <div class="product-body">
+                    <h3>Chilled &amp; Frozen Exports</h3>
+                    <p>High-quality Australian chilled and frozen products including grass-fed beef, lamb and seafood, with full cold chain logistics management.</p>
                 </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background:linear-gradient(135deg,#fff8e8,#f5eddc);">🍯</div>
+                <div class="product-body">
+                    <h3>Health &amp; Wellness Foods</h3>
+                    <p>Australian superfoods, organic products, nutritional supplements and health-conscious food items meeting international regulatory standards.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background:linear-gradient(135deg,#eef5f8,#dce8f0);">🍾</div>
+                <div class="product-body">
+                    <h3>Private Label &amp; OEM</h3>
+                    <p>Custom branding and packaging solutions for international buyers looking to import Australian food and beverage products under their own label.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section id="why-us">
+    <div class="container">
+        <div class="section-title">
+            <h2>Why Choose 4 BLACK DM</h2>
+            <div class="bar"></div>
+            <p>What sets us apart in the competitive food and beverage trading industry.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="icon">🤝</div>
+                <h3>Direct Producer Relationships</h3>
+                <p>We work directly with Australian wineries and food producers, eliminating intermediaries and ensuring competitive pricing.</p>
+            </div>
+            <div class="why-card">
+                <div class="icon">🌏</div>
+                <h3>Global Logistics Network</h3>
+                <p>Established partnerships with major freight forwarders and customs brokers ensure smooth, timely deliveries worldwide.</p>
+            </div>
+            <div class="why-card">
+                <div class="icon">✅</div>
+                <h3>Compliance &amp; Certification</h3>
+                <p>Full compliance with Australian export regulations, international food safety standards, and customs requirements.</p>
+            </div>
+            <div class="why-card">
+                <div class="icon">🔍</div>
+                <h3>Quality Assurance</h3>
+                <p>Rigorous product selection, temperature-controlled logistics, and independent laboratory testing where required.</p>
+            </div>
+            <div class="why-card">
+                <div class="icon">📋</div>
+                <h3>Tailored Sourcing</h3>
+                <p>We source products to match your market's preferences, regulatory environment and price points.</p>
+            </div>
+            <div class="why-card">
+                <div class="icon">💼</div>
+                <h3>End-to-End Service</h3>
+                <p>From supplier identification and price negotiation to documentation, shipping and after-sales support.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ===== CONTACT ===== -->
-<section id="contact">
+<section id="contact" style="background:#f8f9fa;">
     <div class="container">
         <div class="section-title">
             <h2>Contact Us</h2>
             <div class="bar"></div>
-            <p>Have import or export requirements? We would love to hear from you.</p>
+            <p>Interested in our products or looking for a reliable trading partner? Get in touch.</p>
         </div>
         <div class="contact-grid">
             <div class="contact-info">
                 <h3>4 BLACK DM PTY LTD</h3>
-                <p>Whether you are looking to export from Australia or import from overseas, our team is ready to discuss how we can support your trade goals.</p>
+                <p>Whether you are looking to import Australian premium wines and gourmet foods, or export your products to the Australian market, our team is ready to help.</p>
                 <div class="contact-detail">
                     <div class="icon">📍</div>
-                    <div><strong>Office Address</strong><span>Sydney, NSW 2000, Australia</span></div>
+                    <div><strong>Office</strong><span>Sydney, NSW 2000, Australia</span></div>
                 </div>
                 <div class="contact-detail">
                     <div class="icon">📧</div>
@@ -231,24 +312,21 @@
                     <div class="icon">📱</div>
                     <div><strong>Phone</strong><span>+61 2 8000 0000</span></div>
                 </div>
-                <div class="contact-detail">
-                    <div class="icon">🏛️</div>
-                    <div><strong>ABN</strong><span>89 651 130 362</span></div>
-                </div>
             </div>
             <form class="contact-form">
                 <input type="text" placeholder="Your Name *" required>
                 <input type="email" placeholder="Email Address *" required>
                 <input type="text" placeholder="Company Name">
-                <select style="width:100%;padding:14px 18px;border:1px solid #e0e0e0;border-radius:8px;font-size:14px;margin-bottom:16px;font-family:inherit;">
+                <select>
                     <option>Select Enquiry Type</option>
-                    <option>Product Sourcing</option>
-                    <option>Australian Export Collaboration</option>
-                    <option>Logistics &amp; Customs Enquiry</option>
+                    <option>Wine Import Enquiry</option>
+                    <option>Food &amp; Beverage Sourcing</option>
+                    <option>Private Label / OEM</option>
+                    <option>Partner / Distribution</option>
                     <option>General Enquiry</option>
                 </select>
-                <textarea placeholder="Please describe your requirements... *" required></textarea>
-                <button type="submit" class="btn btn-primary" style="width:100%">Submit Enquiry</button>
+                <textarea placeholder="Tell us about your requirements... *" required></textarea>
+                <button type="submit" class="btn btn-primary" style="width:100%">Send Enquiry</button>
             </form>
         </div>
     </div>
@@ -257,9 +335,14 @@
 <!-- ===== FOOTER ===== -->
 <footer>
     <div class="container">
-        <div class="logo" style="color:#fff;font-size:20px;">4 BLACK DM <small style="display:block;font-size:10px;opacity:.5;">GLOBAL TRADE & SOURCING</small></div>
-        <p style="margin-bottom:8px;">4 BLACK DM PTY LTD &nbsp;|&nbsp; ABN 89 651 130 362 &nbsp;|&nbsp; Sydney, Australia</p>
-        <p>&copy; 2026 4 BLACK DM PTY LTD. All Rights Reserved.</p>
+        <div class="logo" style="color:#fff;font-size:18px;font-weight:800;letter-spacing:1px;margin-bottom:8px;">4 BLACK DM <small style="display:block;font-size:10px;opacity:.5;">PREMIUM FOOD & BEVERAGE TRADING</small></div>
+        <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p>&copy; 2026 4 BLACK DM PTY LTD. All Rights Reserved. &nbsp;|&nbsp; Sydney, Australia</p>
     </div>
 </footer>
 
