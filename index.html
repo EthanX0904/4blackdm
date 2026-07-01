@@ -57,10 +57,7 @@
         .about-text ul { list-style: none; padding: 0; }
         .about-text ul li { padding: 8px 0; font-size: 14px; color: #444; }
         .about-text ul li::before { content: '◆ '; color: #c8a45c; }
-        .about-image { background: #f8f9fa; border-radius: 16px; min-height: 320px; display: flex; align-items: center; justify-content: center; }
-        .about-image .icon-wrap { text-align: center; }
-        .about-image .icon-wrap .big-icon { font-size: 100px; display: block; margin-bottom: 8px; }
-        .about-image .icon-wrap span { color: #999; font-size: 14px; }
+        .about-image { border-radius: 16px; min-height: 360px; overflow: hidden; background-size: cover; background-position: center; }
 
         /* ===== PRODUCTS ===== */
         .products { background: #f8f9fa; }
@@ -171,12 +168,7 @@
                     <li>Exporting to 15+ countries across Asia, Europe and North America</li>
                 </ul>
             </div>
-            <div class="about-image">
-                <div class="icon-wrap">
-                    <div class="big-icon">🍷</div>
-                    <span>Australian Wine Specialists</span>
-                </div>
-            </div>
+            <div class="about-image" style="background-image:url('/wine-glasses.jpg');"></div>
         </div>
     </div>
 </section>
