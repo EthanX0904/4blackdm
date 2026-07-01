@@ -12,7 +12,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #fff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        html, body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; background: #f8f9fa; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* ===== HEADER ===== */
@@ -53,7 +53,7 @@
         .btn-outline:hover { border-color: #c8a45c; color: #c8a45c; transform: translateY(-2px); }
 
         /* ===== SECTIONS ===== */
-        section { padding: 100px 0; }
+        section { padding: 80px 0; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 38px; font-weight: 700; margin-bottom: 12px; color: #1a1a2e; }
         .section-title p { color: #888; max-width: 560px; margin: 0 auto; font-size: 15px; }
@@ -69,7 +69,7 @@
         .about-image { border-radius: 16px; min-height: 400px; overflow: hidden; background-size: cover; background-position: center; }
 
         /* ===== PRODUCTS ===== */
-        .products { background: #f8f9fa; }
+        .products { background: #fff; }
         .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .product-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,.04); transition: .3s; }
         .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,.1); }
@@ -290,7 +290,7 @@
 </section>
 
 <!-- ===== CONTACT ===== -->
-<section id="contact" style="background:#f8f9fa;">
+<section id="contact">
     <div class="container">
         <div class="section-title">
             <h2>Contact Us</h2>
