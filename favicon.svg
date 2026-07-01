@@ -40,8 +40,13 @@
     <circle cx="0" cy="-72" r="4" fill="url(#g)" opacity=".8"/>
   </g>
 
-  <!-- "4" in center -->
-  <text x="150" y="145" font-family="'Times New Roman','Georgia',serif" font-size="72" font-weight="700" fill="#1a1a2e" text-anchor="middle" dominant-baseline="central">4</text>
+  <!-- "4" in center (drawn as thick strokes for consistent rendering) -->
+  <g transform="translate(150,140)">
+    <line x1="-18" y1="-28" x2="16" y2="-28" stroke="#1a1a2e" stroke-width="8" stroke-linecap="square"/>
+    <line x1="16" y1="-28" x2="16" y2="20" stroke="#1a1a2e" stroke-width="8" stroke-linecap="square"/>
+    <line x1="16" y1="20" x2="16" y2="32" stroke="#1a1a2e" stroke-width="8" stroke-linecap="square"/>
+    <line x1="-18" y1="-8" x2="16" y2="-8" stroke="#1a1a2e" stroke-width="8" stroke-linecap="square"/>
+  </g>
 
   <!-- Top text -->
   <text x="150" y="58" font-family="'Inter','Helvetica Neue',sans-serif" font-size="11" font-weight="600" fill="#c8a45c" text-anchor="middle" letter-spacing="2.5">EST. 2026</text>
